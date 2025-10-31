@@ -1,92 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <pname charset="utf-8" />
+    <pname name="viewport" content="width=device-width,initial-scale=1" />
+    <pname name="description" content="Chombu Products — home page showcasing electronics." />
+    <title>Chombu Products — Home</title>
     <style>
-        body{
-            background-color: #000000;
-            color: white;
+        /* Basic reset */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        /* Page */
+        html, body { height: 100%; }
+        body {
             font-family: Arial, Helvetica, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.4;
         }
-        *{
-            margin: 0;
-            padding: 0;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
         }
-        .nav-bar{
+
+        /* Nav */
+        header {
+            background: linear-gradient(#000, #2f2f2f);
+        }
+        .nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
             height: 75px;
-            background-image: linear-gradient(#000000, #2f2f2f);
-            padding: 0 10px;
-            color: white;
+            gap: 16px;
+            padding: 0 8px;
         }
-        .right{
+        .nav .logo img { height: 50px; display: block; }
+
+        .nav .actions {
             display: flex;
-            justify-content: space-evenly;
+            gap: 24px;
             align-items: center;
-            gap: 30px;
+            font-weight: 600;
         }
-        .left h2{
-            font-family: Dirtyline36Daysoftype2022-Reg;
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 6px;
         }
-        .productes{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px
+        .nav a:hover { background: rgba(255,255,255,0.06); }
+
+        /* Banner */
+        .banner img {
+            display: block;
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            margin-top: 16px;
         }
-        .productes img{
-            width: 300px;
-            height: 300px;
-            margin: 10px;
-            border: 2px solid rgb(255, 255, 255);
+
+        /* Sections */
+        h1.section-title {
+            text-align: center;
+            margin: 28px 0 12px;
+            font-size: 1.8rem;
+        }
+        .hero-text {
+            text-align: center;
+            margin-top: 8px;
+            color: #ddd;
+        }
+
+        /* Products grid */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            align-items: start;
+            margin: 18px auto 32px;
+            padding: 0 8px;
+            max-width: 1200px;
+        }
+        .product {
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border: 2px solid rgba(255,255,255,0.12);
             border-radius: 8px;
-            background-image: linear-gradient(to bottom right black gray);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        .product .pname {
+            padding: 12px;
+            color: #eee;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 18px 0;
+            margin-top: 32px;
+            text-align: center;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Small screens */
+        @media (max-width: 560px) {
+            .nav .actions { gap: 12px; font-size: 0.95rem; }
+            .banner img { height: 400px; }
+            .product img { height: 180px; }
         }
     </style>
 </head>
 <body>
-    <div class="nav-bar">
-        <div class="left">
-           <img height="50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/1724px-Apple_logo_grey.svg.png" alt="">
+    <header>
+        <div class="nav container" role="navigation" aria-label="Main navigation">
+            <div class="logo">
+                <a href="/">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/1724px-Apple_logo_grey.svg.png" alt="Chombu logo">
+                </a>
+            </div>
+            <nav class="actions" aria-label="User actions">
+                <a href="#signup">Sign up</a>
+                <a href="#login">Log in</a>
+            </nav>
         </div>
-        <div class="right">
-            <h2>Signup</h2>
-            <h2>Login</h2>
+    </header>
+
+    <main>
+        <div class="banner">
+            <img src="https://png.pngtree.com/template/20220330/ourmid/pngtree-black-atmosphere-iphone-xs-apple-promotional-poster-image_908535.jpg" alt="Promotional banner">
         </div>
-    </div>
-    <center>Welcome to Chombu Products</center>
-    <div class="banner">
-        <img width="100%" src="https://png.pngtree.com/template/20220330/ourmid/pngtree-black-atmosphere-iphone-xs-apple-promotional-poster-image_908535.jpg" alt="poster">
-    </div>
-    <center><h1>Products</h1></center>
-    <div class="productes">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTLEi55OoPV7zvhlftw0tq5uVKHekWj6fxEQ&s" alt="">
-        
-        <img src="https://media-ik.croma.com/prod/https://media.tatacroma.com/Croma%20Assets/Communication/Mobiles/Images/309747_0_aerxf2.png" alt="">
-        <img src="https://firsthub.in/public/uploads/all/jrtye1d3q8PpQqRSs1fYedOLuuAIhMgFmIMS2OVw.webp" alt="">
-    </div>
-    <div class="productes">
-        <img src="https://firsthub.in/public/uploads/all/jrtye1d3q8PpQqRSs1fYedOLuuAIhMgFmIMS2OVw.webp" alt="">
-        <img src="https://media-ik.croma.com/prod/https://media.tatacroma.com/Croma%20Assets/Communication/Mobiles/Images/309747_0_aerxf2.png" alt="">
-        <img src="https://media-ik.croma.com/prod/https://media.tatacroma.com/Croma%20Assets/Communication/Mobiles/Images/309747_0_aerxf2.png" alt="">
-    </div>
-    <hr><hr>
-    <div class="similarprd">
-        <center><h1>Similar Products</h1></center>
-        <div class="productes">
-            <img src="https://dpjye2wk9gi5z.cloudfront.net/wcsstore/ExtendedSitesCatalogAssetStore/images/catalog/zoom/5001716-1111V2.jpg" alt="">
-            
-            <img src="https://images-cdn.ubuy.ae/6454be4ead753b4268786211-ipad-pencil-2nd-generation-with-palm.jpg" alt="">
-            <img src="https://quicktech.in/cdn/shop/files/Mouse6.jpg?v=1708773060&width=1445" alt="">
 
-            <img src="https://dpjye2wk9gi5z.cloudfront.net/wcsstore/ExtendedSitesCatalogAssetStore/images/catalog/zoom/5001716-1111V2.jpg" alt="">
+        <div class="container">
+            <p class="hero-text">Welcome to Chombu Products</p>
 
+            <h1 class="section-title">Products</h1>
+            <section class="products" aria-label="Products list">
+                <article class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTLEi55OoPV7zvhlftw0tq5uVKHekWj6fxEQ&s" alt="Smartphone product image">
+                    <div class="pname">Product name or short description</div>
+                </article>
 
+                <article class="product">
+                    <img src="https://media-ik.croma.com/prod/https://media.tatacroma.com/Croma%20Assets/Communication/Mobiles/Images/309747_0_aerxf2.png" alt="Mobile device front view">
+                    <div class="pname">Product name or short description</div>
+                </article>
+
+                <article class="product">
+                    <img src="https://firsthub.in/public/uploads/all/jrtye1d3q8PpQqRSs1fYedOLuuAIhMgFmIMS2OVw.webp" alt="Another device image">
+                    <div class="pname">Product name or short description</div>
+                </article>
+            </section>
+
+            <h1 class="section-title">Similar Products</h1>
+            <section class="products" aria-label="Similar products">
+                <article class="product">
+                    <img src="https://dpjye2wk9gi5z.cloudfront.net/wcsstore/ExtendedSitesCatalogAssetStore/images/catalog/zoom/5001716-1111V2.jpg" alt="Accessory image">
+                    <div class="pname">Accessory or similar item</div>
+                </article>
+
+                <article class="product">
+                    <img src="https://images-cdn.ubuy.ae/6454be4ead753b4268786211-ipad-pencil-2nd-generation-with-palm.jpg" alt="Stylus image">
+                    <div class="pname">Stylus / Pencil</div>
+                </article>
+
+                <article class="product">
+                    <img src="https://quicktech.in/cdn/shop/files/Mouse6.jpg?v=1708773060&width=1445" alt="Wireless mouse image">
+                    <div class="pname">Wireless mouse</div>
+                </article>
+
+                <article class="product">
+                    <img src="https://dpjye2wk9gi5z.cloudfront.net/wcsstore/ExtendedSitesCatalogAssetStore/images/catalog/zoom/5001716-1111V2.jpg" alt="Accessory image (duplicate)">
+                    <div class="pname">Accessory or similar item</div>
+                </article>
+            </section>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            &copy; Chombu Products. All rights reserved.
+        </div>
+    </footer>
+
 </body>
 </html>
