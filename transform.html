@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 180px;
+            width: 180px;
+            background-color: aqua;
+            transition: transform 2s ease;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #rotate:hover{
+            transform: rotate(360deg);
+            background-color: rgb(10, 26, 26);
+            color: white;
+        }
+
+        #translate:hover{
+            transform: translatex(200px);
+            background-color: rgb(10, 26, 26);
+            color: white;
+        }
+
+        #scale:hover{
+            transform: scale(2);
+            background-color: rgb(10, 26, 26);
+            color: white;
+        }
+
+        #rotate:hover{
+            transform: rotate(360deg);
+            background-color: rgb(10, 26, 26);
+            color: white;
+        }
+
+        #skew:hover{
+            transform: skew(30deg,20deg);
+            background-color: rgb(10, 26, 26);
+            color: white;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="translate"><h2>Translate</h2></div>
+    <div class="box" id="scale"><h2>Scale</h2></div>
+    <div class="box" id="rotate"><h2>Rotate</h2></div>
+    <div class="box" id="skew"><h2>Skew</h2></div>
+</body>
+</html>
