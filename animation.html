@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            height: 600px;
+        }
+
+        .ball{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            animation: bounce 2s ease infinte;
+        }
+
+        @keyframes bounce{
+            0%{
+                transform: translateY(0px);
+            }
+            50%{
+                transform: translateY(600px);
+            }
+            100%{
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball">
+        <img height="200px" width="200px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_IupiYhbGhFtNgRyz91FPZZb97QcTWVwsgw&s" alt="">
+    </div>
+</body>
+</html>

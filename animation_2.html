@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+        }
+
+       .box{
+        height: 200px;
+        width: 200px;
+        background-color: red;
+        border-radius: 50%;
+        animation: changeColor 5s ease-in-out infinite;
+       } 
+
+       @keyframes changeColor {
+        0%{
+            transform: translateY(0) ;
+        }
+        45%{
+            transform: scale(1,1);
+        }
+        50%{
+            transform: translateY(600px) scale(1,0.5);
+        }
+        55%{
+            transform: scale(1,1);
+        }
+        100%{
+            transform: translateY(0) ;
+        }
+       }
+
+       .ground{
+        height: 100px;
+        width: 700px;
+        background-color: brown;
+        position: relative;
+        bottom: -400px;
+       }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="ground"></div>
+</body>
+</html>
