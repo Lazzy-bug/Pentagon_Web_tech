@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+.vehicle{
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    /* height: 400px; */
+    width: 400px;
+    border: 2px solid;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 50px;
+
+}
+
+.box{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+input{
+    height: 40px;
+    width: 300px;
+    background-color: white;
+    color: #000000;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid;
+}
+
+button{
+    height: 40px;
+    width: 300px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.v_img img{
+    transition:transform 2s linear;
+}
+
+.v_img img:hover{
+    transform: translate(-200px);
+
+}

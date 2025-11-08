@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        .body{
             display: grid;
             justify-content: center;
             align-items: center;
             height: 600px;
+            padding: 0;
+            margin: 0;
         }
 
        .box{
@@ -22,7 +24,7 @@
 
        @keyframes changeColor {
         0%{
-            transform: translateY(0) ;
+            transform: translateY(0px) ;
         }
         45%{
             transform: scale(1,1);
@@ -40,15 +42,18 @@
 
        .ground{
         height: 100px;
-        width: 700px;
-        background-color: brown;
+        width: 100%;
+        background-image: linear-gradient(green, darkgreen);
         position: relative;
-        bottom: -400px;
+        bottom: -350px;
        }
     </style>
 </head>
 <body>
-    <div class="box"></div>
+    <div class="body">
+        <div class="box"></div>
+    </div>
+    
     <div class="ground"></div>
 </body>
 </html>
