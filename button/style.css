@@ -1,0 +1,114 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: end;
+    align-items: center;
+    gap: 20px;
+}
+.container{
+    border: 1px solid;
+}
+button{
+    margin: 100px;
+    height: 70px;
+    width: 150px;
+}
+.btn1{
+    border-radius: 20px;
+    border: 0;
+    box-shadow: 
+    -10px 0px 0px #691E06 inset,
+    -20px 0px 0px #8F250C inset,
+    -30px 0px 0px #BB4D00 inset,
+    -40px 0px 0px #d85c13 inset;
+    background-color: #FBBA72;
+    font-weight: bold;
+    font-size: large;
+    transition: box-shadow 1s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+.btn1:hover{
+    box-shadow: 
+    10px 0px 0px #003249 inset,
+    20px 0px 0px #007EA7 inset,
+    30px 0px 0px #80CED7 inset,
+    40px 0px 0px #9AD1D4 inset;
+    background-color: #CCDBDC;
+    color: #000000;
+}
+.btn1:active {
+  background-color: #1D546C;
+  color: white;
+  box-shadow: none;
+  transform: scale(.93);
+}
+
+.btn2{
+    border-radius: 50px;
+    border: 0;
+    font-size: large;
+    font-weight: bold;
+    background-color:#f0f0f0;
+    transition: box-shadow 0.5s linear;
+}
+.btn2:hover{
+    box-shadow: 200px 0px 0px #66ff66 inset;
+}
+.btn2:active{
+    background-color: #23b723;
+    box-shadow: none;
+    transition: none;
+
+}
+
+.btn3{
+    border-radius: 10px;
+    box-shadow: 8px 8px 0px #000000;
+    font-size: large;
+    font-weight: bold;
+    overflow: hidden;
+    transition: box-shadow .5s ease;
+}
+.btn3:hover{
+    border: 2px solid #BB4D00;
+    box-shadow: 8px 8px 0px #BB4D00;
+}
+.btn3:active{
+    box-shadow: 5px 5px 0px #BB4D00;
+    transform: scale(.95);
+}
+
+.btn4{
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    font-size: large;
+    border: 0;
+    transition: background-image 1s ease;
+}
+.btn4::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.btn4:hover::after {
+  transform: scale(2);
+}
+
+.btn4-elegante:hover {
+  border-color: #666666;
+  background: #292929;
+}
