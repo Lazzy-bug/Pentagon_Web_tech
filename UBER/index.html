@@ -12,34 +12,46 @@
     </header>
     <div class="box">
         <div class="vehicle">
-            <div class="v_img" id="bike">
+            <div class="v_img" >
                 <img height="220px" src="./processed_image.png" alt="bike">
             </div>
-            <input id="distance" type="number" placeholder="Enter KM" >
-            <button onclick="showDistance()">Book now</button>
+            <input type="number" placeholder="Enter KM" id="bike">
+            <button onclick="bike()">Book now</button>
         </div>
         <div class="vehicle">
-            <div class="v_img" id="auto">
+            <div class="v_img" >
                 <img height="220px" src="https://p.turbosquid.com/ts-thumb/nV/72FvHt/Mf5MsGhh/rr/jpg/1562796635/600x600/turn_fit_q87/f5417003630c50664d413f815cb0af3d60260ae7/rr-1.jpg" alt="">
             </div>
-            <input id="distance" type="number" placeholder="Enter KM" >
-            <button onclick="showDistance()">Book now</button>
+            <input type="number" placeholder="Enter KM" id="auto">
+            <button onclick="auto()">Book now</button>
         </div>
         <div class="vehicle">
-            <div class="v_img" id="car">
+            <div class="v_img">
                 <img height="220px" src="https://p.turbosquid.com/ts-thumb/rZ/Jby2Zm/1c7ghSMu/car_01.effectsresult/jpg/1551442632/600x600/fit_q87/56ebdb99d1accc9822e926b1b9e7cb9966389e91/car_01.effectsresult.jpg" alt="">
             </div>
-            <input id="distance" type="number" placeholder="Enter KM" >
-            <button onclick="showDistance()">Book now</button>
+            <input id="car" type="number" placeholder="Enter KM" >
+            <button onclick="car()">Book now</button>
         </div>
     </div>
 
     <script>
-        function showDistance() {
-            var distance = document.getElementById('distance').value;
-            alert(`you hv selected ${distance}`);
+        function bike() {
+            let km = document.getElementById("bike").value
+            let price = 20;
+            alert (`you may cost ${price*km}Rs for ${km}km`)
         }
 
+        function auto() {
+            let km = document.getElementById("auto").value
+            let price = 30;
+            alert (`you may cost ${price*km}Rs for ${km}km`)
+        }
+
+        function car() {
+            let km = document.getElementById("car").value
+            let price = 50;
+            alert (`you may cost ${price*km}Rs for ${km}km`)
+        }
     </script>
 </body>
 </html>
