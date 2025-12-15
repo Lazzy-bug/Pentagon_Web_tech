@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p-pent{
+            background-color: gold;
+            height: 200px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: initial;
+
+            animation: rotate 2s ease infinite;
+        }
+
+        @keyframes rotate {
+            0%{
+                transform: rotate(0deg);
+                transform: skew(-0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+                transform: skew(-20deg);
+            }
+        }
+        .c-pent{
+            background-color: #ffffff;
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-pent">
+        <div class="c-pent">
+        </div>
+    </div>
+</body>
+</html>
