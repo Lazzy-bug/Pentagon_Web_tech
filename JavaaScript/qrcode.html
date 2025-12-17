@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live QR Code Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+    }
+
+    .container {
+        background: #fff;
+        width: 100%;
+        max-width: 620px;
+        padding: 16px;
+        border: 3px solid #000;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 12px;
+        font-size: 20px;
+    }
+
+    #qrcode {
+        width: 100%;
+        max-width: 440px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto 16px;
+        border: 2px solid #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inputs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 12px;
+        font-weight: bold;
+    }
+
+    .inputs span {
+        font-size: 24px;
+    }
+
+    input {
+        width: 58px;
+        height: 58px;
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    button {
+        width: 100%;
+        max-width: 200px;
+        height: 40px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        border: 2px solid #000;
+        background: #fff;
+    }
+
+    button:hover {
+        background: #000;
+        color: #fff;
+    }
+
+    .hint {
+        font-size: 11px;
+        margin-top: 10px;
+        color: #555;
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 480px) {
+        input {
+            width: 42px;
+            height: 36px;
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        #qrcode {
+            max-width: 200px;
+        }
+    }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>QR CODE</h2>
+
+    <div id="qrcode"></div>
+
+    <div class="inputs">
+        <span>BTMN-</span>
+        <input id="l1" maxlength="1">
+        <span>-</span>
+        <input id="n1" type="number" min="1" max="30">
+        <span>-</span>
+        <input id="l2" maxlength="1">
+        <span>-</span>
+        <input id="n2" type="number" min="1" max="30">
+    </div>
+
+    <br><br>
+    <button id="clearBtn">Clear</button>
+
+
+</div>
+
+<script>
+    const qrContainer = document.getElementById("qrcode");
+    const inputs = Array.from(document.querySelectorAll("input"));
+    const clearBtn = document.getElementById("clearBtn");
+
+    const l1 = document.getElementById("l1");
+    const n1 = document.getElementById("n1");
+    const l2 = document.getElementById("l2");
+    const n2 = document.getElementById("n2");
+
+    let qr = new QRCode(qrContainer, {
+        width: 400,
+        height: 400
+    });
+
+    function generateQR() {
+        l1.value = l1.value.toUpperCase();
+        l2.value = l2.value.toUpperCase();
+
+        if (!l1.value && !n1.value && !l2.value && !n2.value) {
+            qr.clear();
+            return;
+        }
+
+        const text = `BTMN-${l1.value}-${n1.value}-${l2.value}-${n2.value}`;
+        qr.clear();
+        qr.makeCode(text);
+    }
+
+    function moveNext(current) {
+        const index = inputs.indexOf(current);
+        const next = inputs[index + 1];
+        if (next) {
+            next.focus();
+            next.select();
+        }
+    }
+
+    function movePrev(current) {
+        const index = inputs.indexOf(current);
+        const prev = inputs[index - 1];
+        if (prev) {
+            prev.focus();
+            prev.select();
+        }
+    }
+
+    // Auto-advance logic
+    l1.addEventListener("input", () => {
+        if (l1.value.length === 1) moveNext(l1);
+        generateQR();
+    });
+
+    n1.addEventListener("input", () => {
+        if (n1.value.length === 2) moveNext(n1);
+        generateQR();
+    });
+
+    l2.addEventListener("input", () => {
+        if (l2.value.length === 1) moveNext(l2);
+        generateQR();
+    });
+
+    n2.addEventListener("input", generateQR);
+
+    // ENTER & BACKSPACE navigation
+    inputs.forEach(input => {
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                moveNext(input);
+            }
+
+            if (e.key === "Backspace" && input.value === "") {
+                e.preventDefault();
+                movePrev(input);
+            }
+        });
+    });
+
+    // Clear button
+    clearBtn.addEventListener("click", () => {
+        inputs.forEach(input => input.value = "");
+        qr.clear();
+        l1.focus();
+    });
+</script>
+
+</body>
+</html>

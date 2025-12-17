@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click</button><br><br>
+    <input type="text" id="user">
+    <script>
+        // Mouse events
+        let button=document.getElementById("btn")
+        button.addEventListener("click",()=>{
+            console.log("this is funtion A");
+        })
+        button.addEventListener("dblclick",()=>{
+            console.log("this is funtion B");
+        })
+
+        button.addEventListener("mouseover",()=>{
+            console.log("this is a mouseOver function");
+        })
+
+        // Keyboard events
+        let input=document.getElementById("user")
+        input.addEventListener("keypress",(e)=>{
+            if (e.key=="s"){
+                console.log("hooo");                
+            }else{
+                console.log("noooo");
+            }
+            
+        })
+    </script>
+</body>
+</html>

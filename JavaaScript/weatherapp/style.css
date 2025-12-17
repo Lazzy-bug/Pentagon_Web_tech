@@ -1,0 +1,46 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(lightblue,blue);
+}
+
+#container{
+    position: relative;
+    text-align: center;
+    background: #d9cb6075;
+    padding: 30px 50px 50px 50px;
+    border-radius: 12px;
+}
+
+input{
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+}
+
+button{
+    height: 32px;
+    width: 50px;
+    border: none;
+    border-radius: 8px;
+}
+
+#container span{
+    position: absolute;
+    top: -80px;
+    right: -70px;
+    font-size: 120px;
+    /* animation: rotate 2s linear infinite; */
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
