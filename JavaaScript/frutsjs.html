@@ -11,6 +11,25 @@
 
     </div>
 
+    <!-- 
+        FUNCTION: add()
+        PURPOSE: Creates an ordered list of fruits and adds it to the DOM
+        
+        LOGIC BREAKDOWN:
+        1. Get the container element from the HTML using its id "container"
+        2. Create a new <ol> (ordered list) element
+        3. Define an array of fruit names: mango, apple, banana, grapes
+        4. Loop through the array 4 times (i=0 to i=3)
+           - Create a new <li> (list item) element
+           - Set the text content of the <li> to the current fruit name
+           - Append the <li> to the <ol>
+        5. Append the completed <ol> to the container element in the DOM
+        
+        RESULT: An ordered list with 4 fruit items is inserted into the webpage
+        
+        NOTE: The function is called immediately after definition with add();
+        This means the list will display automatically when the page loads.
+    -->
 
     <script>
         function add(){
